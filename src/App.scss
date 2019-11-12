@@ -1,0 +1,28 @@
+:root {
+  // --lightBlue: rgba(139,166,198,0.25);
+  --lightBlue: #fafafa;
+  --green: rgba(240, 250, 239, 100);
+  --link: rgba(245, 215, 110, 0.5);
+  --linkHover: rgba(245, 215, 110, 0.8);
+  --body: #4a4a4a;
+  --heaFamily: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+body {
+  color: var(--body);
+}
+
+.block {
+  padding: 56px 0;
+  &__content {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+

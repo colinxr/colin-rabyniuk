@@ -1,0 +1,39 @@
+.header {
+  background-color: var(--lightBlue);
+  text-align: left;
+  border-bottom: 1px solid #edefee;
+
+  h1 {
+    font-family: var(--headFamily);
+    font-size: 2.6111111rem;
+    line-height: 3.1111111rem;
+  }
+  h6 {
+    // font-family: var(--headFamily);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5555556rem;
+    margin-bottom: 1.5555556rem;
+  }
+
+  &__nav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 56px 0 0;
+  }
+
+  &__item {
+    & + .header__item { margin-left: 28px; }
+ 
+    a {
+      background-color: var(--link);
+      transition: all linear .2s;
+      color: var(--body);
+      &:hover {
+        background-color: var(--linkHover);
+        text-decoration: none;
+      }
+    }
+  }
+}
