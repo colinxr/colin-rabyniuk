@@ -5,21 +5,23 @@ import Post from '../../components/Post/Post';
 function Blog() {
   const [posts, setPosts] = useState();
 
-  const apiEndpoint = 'https://colin-rabyniuk.cdn.prismic.io/api/v2'
-
-  console.log(apiEndpoint)
+  const apiEndpoint = process.env.REACT_APP_API
 
   useEffect(() => {
     Prismic.getApi(apiEndpoint)
       .then(api => api.query('')) 
-      .then(resp => console.log(resp));
+      .then(resp => {
+        setPosts(resp.results);
+      });
   }, [])
 
   return (
     <main className="block" role="main">
       <div className="block__content">
+        <h3>Journal</h3>
         {
-          // map over items
+          posts !== undefined && 
+          posts.map((post, i) => <Post key={i} post={post}></Post> )
         }
       </div>
     </main>
