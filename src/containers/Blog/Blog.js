@@ -4,16 +4,20 @@ import Post from '../../components/Post/Post';
 
 function Blog() {
   const [posts, setPosts] = useState();
+  const [page, setPage] = useState(1);
 
   const apiEndpoint = process.env.REACT_APP_API
 
-  useEffect(() => {
+  useEffect(() => { fetchPosts() }, [])
+
+  const fetchPosts = () => {
     Prismic.getApi(apiEndpoint)
-      .then(api => api.query('')) 
-      .then(resp => {
-        setPosts(resp.results);
-      });
-  }, [])
+      .then(api => api.query(
+        Prismic.Predicates.at('document.type', 'post'),
+        { pageSize: 10, page: page }
+      ))
+      .then(resp => { setPosts(resp.results) });
+  }
 
   return (
     <main className="block" role="main">
@@ -23,6 +27,15 @@ function Blog() {
           posts !== undefined && 
             posts.map((post, i) => <Post key={i} post={post}></Post> )
         }
+        {
+          page > 1 &&
+            <button onCLick={() => { setPage(page - 1)}}>
+              Previous Page
+            </button>
+        }
+        <button onCLick={() => { setPage(page + 1) }}>
+          Next Page
+        </button>
       </div>
     </main>
   )

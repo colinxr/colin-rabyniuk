@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+.ease {
+  opacity: 0; 
+  animation: slideUp .75s forwards;
+  
+  @for $i from 1 through 50 {
+    &:nth-child(#{$i}) {
+      animation-delay: 100ms * $i;
+    }
+  }
+}
+
+@keyframes slideUp {
+  0%,100% {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translateY(75px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); 
+  } 
+}

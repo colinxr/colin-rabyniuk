@@ -1,4 +1,5 @@
 import React from 'react';
+import Menu from '../Menu/Menu'
 import './Header.scss';
 
 function Header(props) {
@@ -9,7 +10,7 @@ function Header(props) {
             <React.Fragment>
                 <h6>Hey!</h6>
                 <h2>I&rsquo;m Colin. Let&rsquo;s build</h2>
-                { renderMenu() }
+                <Menu />
             </React.Fragment>
         )
     }
@@ -17,32 +18,12 @@ function Header(props) {
     const renderLarge = () => {
         return  (
             <React.Fragment>
-                <h6>Hey!</h6>
-                <h1>My name is Colin Rabyniuk,</h1>
-                <h1>I&rsquo;m a full-stack dev who loves all things digital.</h1>
-                <h1>Let&rsquo;s build</h1>
-                { renderMenu() }
+                <h6 class="ease">Hey!</h6>
+                <h1 class="ease">My name is Colin Rabyniuk,</h1>
+                <h1 class="ease">I&rsquo;m a full-stack dev who loves all things digital.</h1>
+                <h1 class="ease">Let&rsquo;s build</h1>
+                <Menu />
             </React.Fragment>
-        )
-    }
-
-    const renderMenu = () => {
-        return (
-            <ul className="header__nav" role="navigation">
-                <li className="header__item">
-                    <a href="mailto:colinxr@gmail.com">Email</a>
-                </li>
-                <li className="header__item">
-                    <a href="github.com/colinxr" target="_blank">GitHub</a>
-                </li>
-                <li className="header__item">
-                    <a href="medium.com/colinxr" target="_blank">Medium</a>
-                </li>
-                <li className="header__item">
-                    <a href="linkedIn.com/colinxr" target="_blank">LinkedIn</a>
-                </li>
-                <li className="header__item">#COYG</li>
-            </ul>
         )
     }
 
@@ -50,7 +31,9 @@ function Header(props) {
         <div className={ classes } role="banner">
             <div className="block__content">
                 {
-                    props.isInsidePage ? renderSmall() : renderLarge()
+                    props.isInsidePage ? 
+                        renderSmall() : 
+                        renderLarge()
                 }
             </div>
         </div>

@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import PostPage from './containers/PostPage/PostPage';
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
   <Router>
-    <div>
+    <>
       <Route exact path="/" component={App} />
       <Route path="/posts/:slug" component={PostPage} />
       {/* <Route path="/me" component={PostPage} /> */}
-    </div>
+    </>
   </Router>
 )
 ReactDOM.render(routing, document.getElementById('root'));
