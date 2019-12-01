@@ -21,7 +21,7 @@ function Blog() {
         <h3>Journal</h3>
         {
           posts !== undefined && 
-          posts.map((post, i) => <Post key={i} post={post}></Post> )
+            posts.map((post, i) => <Post key={i} post={post}></Post> )
         }
       </div>
     </main>

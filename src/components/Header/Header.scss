@@ -36,4 +36,9 @@
       }
     }
   }
+
+  &--inside {
+    padding: 26px 0;
+    .header__nav { margin-top: 26px;}
+  }
 }

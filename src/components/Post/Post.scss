@@ -1,0 +1,11 @@
+.cr-post-item {
+  & + .cr-post-item { margin-top: 2.25rem; }
+
+  h2 { margin-bottom: .5rem; }
+
+  &__meta { 
+    font-family: var(--metaFamily); 
+    font-size: .75rem;
+    margin: 0;
+  }
+}

@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "install": "^0.13.0",
     "node-sass": "^4.13.0",
+    "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.1",
+    "prismjs": "^1.17.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },

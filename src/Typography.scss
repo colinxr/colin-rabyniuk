@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Apercu';
+  src: url('/fonts/apercu-regular.eot');
+  src: url('/fonts/apercu-regular.ttf'),
+  url('/fonts/apercu-regular.woff'),
+  url('/fonts/apercu-regular.woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Apercu';
+  src: url('/fonts/Apercu-Medium.eot');
+  src: url('/fonts/Apercu-Medium.ttf'),
+  url('/fonts/Apercu-Medium.woff'),
+  url('/fonts/Apercu-Medium.woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Apercu';
+  src: url('/fonts/Apercu-Medium-italic.eot');
+  src: url('/fonts/Apercu-Medium-italic.ttf'),
+  url('/fonts/Apercu-Medium-italic.woff'),
+  url('/fonts/Apercu-Medium-italic.woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apercu Mono';
+  src: url('/fonts/ApercuPro-Mono.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+h1, 
+h2, 
+h3 { letter-spacing: 1px; }
+
+h6 { font-weight: 300; }
