@@ -1,3 +1,5 @@
+$body: #4a4a4a;
+
 .cr-post-item {
   & + .cr-post-item { margin-top: 2.25rem; }
 
@@ -7,5 +9,12 @@
     font-family: var(--metaFamily); 
     font-size: .75rem;
     margin: 0;
+  }
+
+  a {
+    color: var(--body);
+    text-decoration: underline;
+    &:visited { color: lighten($body, 20%) }
+    &:visited { color: lighten($body, 10%) }
   }
 }

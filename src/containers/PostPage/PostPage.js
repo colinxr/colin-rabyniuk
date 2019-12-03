@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from "react-helmet";
 import Prismic from 'prismic-javascript';
-import Prism from 'prismjs'
-import { Link, RichText } from 'prismic-reactjs';
-import Layout from '../../components/Layout'
-import './PostPage.scss';
-import './prism.css'
+import Layout from '../../components/Layout';
+import PostBody from '../../components/PostBody/PostBody';
 
 function PostPage(props) {
   const { params } = props.match
@@ -14,10 +11,6 @@ function PostPage(props) {
   const apiEndpoint = process.env.REACT_APP_API
 
   useEffect(() => { fetchPost(post) }, [])  
-
-  useEffect(() => {
-    setTimeout(() => Prism.highlightAll(), 0)
-  }, [])
 
   const fetchPost = () => {
     Prismic.getApi(apiEndpoint)
@@ -28,22 +21,22 @@ function PostPage(props) {
       })
   }
 
-  const renderPost = () => {
-    const { title, published, body } = post.data
-    // const bodyHTML = PrismicDOM.RichText.asHtml(body);
+  // const renderPost = () => {
+  //   const { title, published, body } = post.data
+  //   // const bodyHTML = PrismicDOM.RichText.asHtml(body);
 
-    return (
-      <div className="cr-post">
-        { RichText.render(post.data.title) }
-        <span className="cr-post-item__meta">{published}</span>
-        <div className="cr-post__body">
-          {
-            RichText.render(post.data.body)
-          }
-        </div>
-      </div>
-    )
-  }
+  //   return (
+  //     <div className="cr-post">
+  //       { RichText.render(post.data.title) }
+  //       <span className="cr-post-item__meta">{published}</span>
+  //       <div className="cr-post__body">
+  //         {
+  //           RichText.render(post.data.body)
+  //         }
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
   return (
     <>
@@ -60,7 +53,7 @@ function PostPage(props) {
               <div className="block__content">
                 {
                   post !== undefined &&
-                  renderPost()
+                   <PostBody data={post.data} />
                 }
               </div>
             </div>

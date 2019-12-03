@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Prismic from 'prismic-javascript';
 import Post from '../../components/Post/Post';
 
-function Food() {
+const Food = (props) => {
   const [posts, setPosts] = useState();
   const [page, setPage] = useState(1);
 

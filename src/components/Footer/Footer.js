@@ -5,7 +5,7 @@ import './Footer.scss'
 const Footer = () => {
   const date = new Date()
   return (
-    <footer class="footer">
+    <footer className="footer">
       <div className="footer__content">
         <span>Colin Rabyniuk, { date.getFullYear() }</span>
         <Menu isSecondary={true}/>
