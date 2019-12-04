@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Prismic from 'prismic-javascript';
 import Post from '../../components/Post/Post';
+import './Blog.scss';
 
 function Blog() {
   const [posts, setPosts] = useState();
@@ -33,7 +34,7 @@ function Blog() {
               Previous Page
             </button>
         }
-        <button onCLick={() => { setPage(page + 1) }}>
+        <button onClick={() => { setPage(page + 1) }}>
           Next Page
         </button>
       </div>

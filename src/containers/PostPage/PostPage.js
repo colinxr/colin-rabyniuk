@@ -7,7 +7,7 @@ import PostBody from '../../components/PostBody/PostBody';
 function PostPage(props) {
   const { params } = props.match
   const [post, setPost] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const apiEndpoint = process.env.REACT_APP_API
 
   useEffect(() => { fetchPost(post) }, [])  
@@ -17,26 +17,9 @@ function PostPage(props) {
       .then(api => api.getByUID('post', params.slug))
       .then(resp => {
         setPost(resp)
-        setIsLoading(false)
+        // setIsLoading(false)
       })
   }
-
-  // const renderPost = () => {
-  //   const { title, published, body } = post.data
-  //   // const bodyHTML = PrismicDOM.RichText.asHtml(body);
-
-  //   return (
-  //     <div className="cr-post">
-  //       { RichText.render(post.data.title) }
-  //       <span className="cr-post-item__meta">{published}</span>
-  //       <div className="cr-post__body">
-  //         {
-  //           RichText.render(post.data.body)
-  //         }
-  //       </div>
-  //     </div>
-  //   )
-  // }
 
   return (
     <>

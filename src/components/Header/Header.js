@@ -7,23 +7,23 @@ function Header(props) {
 
     const renderSmall = () => {
         return (
-            <React.Fragment>
+            <>
                 <h6>Hey!</h6>
                 <h2>I&rsquo;m Colin. Let&rsquo;s build</h2>
                 <Menu />
-            </React.Fragment>
+            </>
         )
     }
 
     const renderLarge = () => {
         return  (
-            <React.Fragment>
-                <h6 class="ease">Hey!</h6>
-                <h1 class="ease">My name is Colin Rabyniuk,</h1>
-                <h1 class="ease">I&rsquo;m a full-stack dev who loves all things digital.</h1>
-                <h1 class="ease">Let&rsquo;s build</h1>
+            <>
+                <h6 className="ease">Hey!</h6>
+                <h1 className="ease">My name is Colin Rabyniuk,</h1>
+                <h1 className="ease">I&rsquo;m a full-stack dev who loves all things digital.</h1>
+                <h1 className="ease">Let&rsquo;s build</h1>
                 <Menu />
-            </React.Fragment>
+            </>
         )
     }
 

@@ -1,0 +1,18 @@
+.cr-post {
+  min-height: 500px;
+}
+
+h1 {
+  line-height: 1.2;
+  margin-bottom: .75rem;
+}
+
+.loading {
+  background-color: #eaeaea;
+  height: 1.5rem;
+  padding-top: 1.5rem;
+
+  & + .loading { margin-top: .75rem; }
+
+  &--small { height: .5rem; }
+}

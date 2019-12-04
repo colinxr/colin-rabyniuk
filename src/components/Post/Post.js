@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import './Post.scss';
 
 function Post(props) {
-  console.log(props.post)
   const { uid } = props.post;
-  const { title, published, body, excerpt } = props.post.data
+  const { title, published, excerpt } = props.post.data
 
   // format published into [Mon, Day, Year]
   // add excerpt
