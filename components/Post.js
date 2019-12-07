@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 function Post(props) {
   const { uid } = props.post;
@@ -11,7 +11,11 @@ function Post(props) {
 
   return (
     <article className="cr-post-item">
-      <h2><Link to={`/posts/${uid}`}>{ title[0].text }</Link></h2>
+      <h2>
+        <Link to={`/post/${uid}`} as={`/post/${uid}`}>
+          <a>{title[0].text}</a>
+        </Link>
+      </h2>
       <span className="cr-post-item__meta">{ published }</span>
         { text && <p>{ text }</p> }
 
