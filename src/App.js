@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
 import Layout from './components/Layout'
-import Blog from './containers/Blog/Blog';
-import Food from './containers/Food/Food';
+import Blog from '../containers/Blog/Blog';
+import Food from '../containers/Food/Food';
 import './App.scss';
 import './Typography.scss';
 
