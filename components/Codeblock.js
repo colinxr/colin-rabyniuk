@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Prism from 'prismjs'
-import styles from './prism'
 
 const Codeblock = (props) => {
 
@@ -12,8 +11,19 @@ const Codeblock = (props) => {
         {props.content}
       </code>
       <style jsx>{`
-        {styles}
+        pre,
+        code {
+          font-size: .75rem;
+          tab-size: 2
+        }
+
+        pre {
+          background-color: #2d2d2d;
+          padding: 1.3rem;
+          margin: 1.5rem 0;
+        }
       `}</style>
+
     </pre>
   )
 

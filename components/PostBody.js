@@ -32,7 +32,7 @@ const PostBody = (props) => {
         return React.createElement('h1',
           propsWithUniqueKey(props, key), 
           children);
-      
+
       default:
         return null
     }

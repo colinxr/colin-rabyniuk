@@ -14,7 +14,7 @@ pre[class*="language-"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
+	font-size: .75rem;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -22,21 +22,16 @@ pre[class*="language-"] {
 	word-wrap: normal;
 	line-height: 1.5;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+	tab-size: 2;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
 	hyphens: none;
 
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
+	padding: 1.3rem;
+	margin: 1.5rem 0;
 	overflow: auto;
 }
 

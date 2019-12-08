@@ -103,6 +103,11 @@ const Layout = props => {
         main {
           margin-bottom: 56px;
         }
+
+        .text {
+          background-color: #eaeaea;
+          font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
       `}</style>
     </>
   )
