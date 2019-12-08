@@ -1,30 +1,20 @@
 import React, {useState, useEffect} from 'react';
-import Prismic from 'prismic-javascript';
 import Post from './Post.js';
+import { getPosts } from '../api/posts.js';
 
-function Blog() {
-  const [posts, setPosts] = useState();
+const Blog = (props) => {
   const [page, setPage] = useState(1);
+  const [posts, setPosts] = useState([])
 
-  // const apiEndpoint = process.env.REACT_APP_API
-  const endpoint = 'https://colin-rabyniuk.cdn.prismic.io/api/v2'
-
-  useEffect(() => { fetchPosts() }, [])
-
-  const fetchPosts = () => {
-    Prismic.getApi(endpoint)
-      .then(api => api.query(
-        Prismic.Predicates.at('document.type', 'post'),
-        { pageSize: 10, page: page }
-      ))
-      .then(resp => { 
-        console.log(resp)
-        setPosts(resp.results) 
-      });
-  }
+  useEffect(() => {
+    (async function fetchPosts(page) {
+      const resp = await getPosts('post', page)
+      setPosts(resp)
+    })()
+  }, [])
 
   return (
-    <main className="block" role="main">
+    <main role="main">
       <div className="wrapper">
         <h3>Journal</h3>
         {
@@ -37,9 +27,9 @@ function Blog() {
               Previous Page
             </button>
         }
-        <button onClick={() => { setPage(page + 1) }}>
+        {/* <button onClick={() => { setPage(page + 1) }}>
           Next Page
-        </button>
+        </button> */}
       </div>
       <style jsx>{`
         h3 { color: #4a4a4a; }

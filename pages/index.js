@@ -1,16 +1,13 @@
 import React from 'react'
-import fetch from 'isomorphic-unfetch'
+import { getPosts } from '../api/posts'
 import Layout from '../components/Layout'
 import Blog from '../components/Blog';
-import Food from '../components/Food';
+// import Food from '../components/Food';
 
-const Index = () => (
+const Index = (props) => (
   <Layout 
     content= {
-      <>
-        <Blog />
-        <Food />
-      </>
+      <Blog posts={props.posts} />
     }
   />
 )

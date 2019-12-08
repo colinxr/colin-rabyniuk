@@ -5,11 +5,9 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
  */
+import css from 'styled-jsx/css'
 
- .cr-post__title { 
-	line-height: 1.2;
-	margin-bottom: .75rem;
- }
+export default css`
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -161,4 +159,5 @@ pre[class*="language-"] {
 .command-line-prompt > span[data-prompt]:before {
 	content: attr(data-prompt);
 }
+`
 

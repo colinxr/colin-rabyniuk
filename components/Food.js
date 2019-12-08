@@ -8,7 +8,7 @@ const Food = (props) => {
 
   const apiEndpoint = process.env.REACT_APP_API
 
-  useEffect(() => { fetchPosts() }, [])
+  // useEffect(() => { fetchPosts() }, [])
 
   const fetchPosts = () => {
     Prismic.getApi(apiEndpoint)

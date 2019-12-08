@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import Menu from './Menu'
 
 function Header(props) {
@@ -7,7 +8,9 @@ function Header(props) {
 	const renderSmall = () => {
 		return (
 			<>
-				<h6>Hey!</h6>
+				<h6>
+				<Link href="/"><a>Back</a></Link>
+				</h6>
 				<h2>I&rsquo;m Colin. Let&rsquo;s build</h2>
 				<Menu />
 			</>
@@ -31,36 +34,45 @@ function Header(props) {
 			<div className="wrapper">
 				{
 					props.isInsidePage ? 
-						renderSmall() : 
-						renderLarge()
+						<>
+							<h6>
+								<Link href="/"><a>Back</a></Link>
+							</h6>
+							<h2>I&rsquo;m Colin. Let&rsquo;s build</h2>
+							<Menu />
+						</> : 
+						<>
+							<h6 className="ease">Hey!</h6>
+							<h1 className="ease">My name is Colin Rabyniuk,</h1>
+							<h1 className="ease">I&rsquo;m a full-stack dev who loves all things digital.</h1>
+							<h1 className="ease">Let&rsquo;s build</h1>
+							<Menu />
+						</>
 				}
 			</div>
 
 		<style jsx>{`
 			.header {
-				background-color: var(--lightBlue);
+				// background-color: var(--lightBlue);
 				text-align: left;
 				border-bottom: 1px solid #edefee;
+				font-family: var(--headFamily);
+				margin-bottom: 56px;
 			}
 
 			.header--inside { padding: 26px 0; }
 
 			h1 {
-				font-family: var(--headFamily);
 				font-size: 2.6111111rem;
 				line-height: 3.1111111rem;
 			}
 			
-			h6 {
+			h6  {
 				font-size: 1rem;
 				font-weight: 600;
 				line-height: 1.5555556rem;
 				margin-bottom: 1.5555556rem;
 			}
-
-  		.nav { margin-top: 56px; }
-			
-			.header--inside .nav { margin-top: 26px;}
 
 			.ease:nth-child(1) { animation-delay: 100ms * 1; }
 			.ease:nth-child(2) { animation-delay: 100ms * 2; }

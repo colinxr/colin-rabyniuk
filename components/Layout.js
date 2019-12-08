@@ -1,10 +1,15 @@
 import React from 'react';
+import Head from 'next/head'
 import Header from './Header';
 import Footer from './Footer';
 
 const Layout = props => {
   return (
-    <>      
+    <>    
+      <Head>
+        <title>Colin Rabyniuk</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>  
       <Header 
         isInsidePage={ props.isInsidePage }
       />
@@ -25,12 +30,54 @@ const Layout = props => {
           --metaFamily:'Apercu Mono', Monaco, Menlo, Courier, Sans-serif;
         }
 
+        @font-face {
+          font-family: Apercu;
+          src: url('/fonts/apercu-regular.eot');
+          src: url('/fonts/apercu-regular.eot?#iefix') format("embedded-opentype"),
+            url('/fonts/apercu-regular.woff2') format("woff2"),
+            url('/fonts/apercu-regular.woff') format("woff"),
+            url('/fonts/apercu-regular.ttf') format("truetype");
+          font-weight: 400;
+          font-style: normal
+        }
+
+        @font-face {
+          font-family: Apercu;
+          src: url('/fonts/apercu-regular.eot');
+          src: url('/fonts/apercu-regular.eot?#iefix') format("embedded-opentype"),
+            url('/fonts/apercu-regular.woff2') format("woff2"),
+            url('/fonts/apercu-regular.woff') format("woff"),
+            url('/fonts/apercu-regular.ttf') format("truetype");
+          font-weight: 400;
+          font-style: normal
+        }
+
+        @font-face {
+          font-family: Apercu;
+          src: url('/fonts/apercu-bold.eot');
+          src: url('/fonts/apercu-bold.eot?#iefix') format("embedded-opentype"),
+            url('/fonts/apercu-bold.woff2') format("woff2"),
+            url('/fonts/apercu-bold.woff') format("woff"),
+            url('/fonts/apercu-bold.ttf') format("truetype");
+          font-weight: 600;
+          font-style: normal
+        }
+
+        @font-face {
+          font-family: Apercu Mono;
+          src: url('/fonts/ApercuPro-Mono.ttf') format("truetype");
+          font-weight: 400;
+          font-style: normal
+        }
+
         html {
           font-size: 18px;
           line-height: 28px;
+          margin: 0;
         }
 
         body {
+          margin: 0 !important;
           color: var(--body);
           font-family: var(--hedFamily);
           // background-color: #add8e6;
@@ -41,6 +88,7 @@ const Layout = props => {
           // background-color: lighten(#e8f4f8, 2%);
           // background-color: #e8f4f8;
         }
+        
         .block--header {
           background-color: white;
           border-bottom: 1px solid #eaeaea;
@@ -50,6 +98,10 @@ const Layout = props => {
           width: 90%;
           max-width: 728px;
           margin: 0 auto
+        }
+
+        main {
+          margin-bottom: 56px;
         }
       `}</style>
     </>

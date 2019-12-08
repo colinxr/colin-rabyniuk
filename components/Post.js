@@ -12,7 +12,7 @@ function Post(props) {
   return (
     <article className="cr-post-item">
       <h2>
-        <Link to={`/post/${uid}`} as={`/post/${uid}`}>
+        <Link href={`/post/${uid}`} as={`/post/${uid}`}>
           <a>{title[0].text}</a>
         </Link>
       </h2>

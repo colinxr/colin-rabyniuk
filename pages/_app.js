@@ -1,8 +1,8 @@
 import React from 'react'
 import App from 'next/app'
 
-function Site({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default Site
+export default MyApp
