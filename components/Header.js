@@ -74,11 +74,30 @@ function Header(props) {
 				margin-bottom: 1.5555556rem;
 			}
 
-			.ease:nth-child(1) { animation-delay: 100ms * 1; }
-			.ease:nth-child(2) { animation-delay: 100ms * 2; }
-			.ease:nth-child(3) { animation-delay: 100ms * 3; }
-			.ease:nth-child(4) { animation-delay: 100ms * 4; }
-			.ease:nth-child(5) { animation-delay: 100ms * 5; }
+			.ease {
+				opacity: 0;
+				animation: slideUp .75s;
+				animation-iteration-count: 1;
+				transform-origin: 50% 50%;
+				animation-fill-mode: forwards;
+			 }
+
+			.ease:nth-child(1) { animation-delay: 100ms; }
+			.ease:nth-child(2) { animation-delay: 200ms; }
+			.ease:nth-child(3) { animation-delay: 300ms; }
+			.ease:nth-child(4) { animation-delay: 400ms; }
+			.ease:nth-child(5) { animation-delay: 500ms; }
+
+			@keyframes slideUp {
+			0%,100% {
+				transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+				/* easeOutCirc */ }
+			0% {
+				opacity: 0;
+				transform: translateY(75px); }
+			100% {
+				opacity: 1;
+				transform: translateY(0); } }
 		`}</style>
 		</div>
 	)
