@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import Post from './Post.js';
-import { getPosts } from '../api/posts.js';
+import { getPosts } from '../api/posts';
+import Post from './Post';
+import Loading from './Loading'
 
 const Blog = (props) => {
   const [page, setPage] = useState(1);
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState(null)
 
   useEffect(() => {
     (async function fetchPosts(page) {
@@ -18,9 +19,11 @@ const Blog = (props) => {
       <div className="wrapper">
         <h3>Journal</h3>
         {
-          posts !== undefined && 
-            posts.map((post, i) => <Post key={i} post={post}></Post> )
+          !posts &&
+            <Loading />
         }
+        { posts && 
+            posts.map((post, i) => <Post key={i} post={post}></Post> ) }
         {
           page > 1 &&
             <button onCLick={() => { setPage(page - 1)}}>
