@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { initAnalytics, logPageView } from '../utils/analytics';
 import Head from 'next/head'
 import Header from './Header';
+import Newsletter from './Newsletter';
 import Footer from './Footer';
 
 const Layout = props => {
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initAnalytics()
+      window.GA_INITIALIZED = true
+    }
+
+    logPageView()
+  }, [])
   return (
     <>    
       <Head>
         <title>Colin Rabyniuk</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta description="Colin Rabyniuk full stack developer – Javascript, PHP, Python, Wordpress"/>
       </Head>  
-      <Header 
-        isInsidePage={ props.isInsidePage }
-      />
+      <Header isInsidePage={ props.isInsidePage } />
       <main>
         { props.content }
       </main>
+
       <Footer />
 
       <style jsx global>{`
