@@ -5,14 +5,14 @@ import Header from './Header';
 import Newsletter from './Newsletter';
 import Footer from './Footer';
 
-const Layout = props => {
+const Layout = (props) => {
   useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initAnalytics()
-      window.GA_INITIALIZED = true
-    }
+    // if (!window.GA_INITIALIZED) {
+    //   initAnalytics()
+    //   window.GA_INITIALIZED = true
+    // }
 
-    logPageView()
+    // logPageView()
   }, [])
   return (
     <>    
@@ -32,7 +32,7 @@ const Layout = props => {
         {/* { favicon } */}
       </Head>  
       
-      <Header isInsidePage={ props.isInsidePage } />
+      {/* <Header isInsidePage={ props.isInsidePage } /> */}
   
       <main role="main"> { props.content } </main>
       

@@ -38,16 +38,15 @@ const PostBody = (props) => {
     }
   };
 
-
   return ( 
     <div className="cr-post">
       {
         props && (
           <>
-            { <RichText render={title} htmlSerializer={htmlSerializer} /> }
+            {<RichText key="title" render={title} htmlSerializer={htmlSerializer} /> }
             <span className="cr-post__meta">{ published }</span>
             <div className="cr-post__body">
-              { <RichText render={body} htmlSerializer={htmlSerializer} /> }
+              { <RichText key="body" render={body} htmlSerializer={htmlSerializer} /> }
             </div>
           </>
         )
