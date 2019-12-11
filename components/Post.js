@@ -20,6 +20,8 @@ const Post = (props) => {
         { text && <p>{ text }</p> }
 
     <style jsx>{`
+      .cr-post-item { border-radius: 10px; }
+
       .cr-post-item + .cr-post-item { margin-top: 2.25rem; }
 
       .cr-post-item__meta { 

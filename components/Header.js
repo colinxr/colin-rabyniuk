@@ -49,6 +49,8 @@ const Header = (props) => {
 				line-height: 1.5555556rem;
 				margin-bottom: 1.5555556rem;
 			}
+			
+			h6 a { text-decoration: none; }
 
 			.ease {
 				opacity: 0;

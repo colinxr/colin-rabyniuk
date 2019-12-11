@@ -1,10 +1,10 @@
-import App from 'next/app'
+import App, { Container } from 'next/app'
 import React from 'react'
 import { PageTransition } from 'next-page-transitions'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <Container>
       <PageTransition timeout={300} classNames="page-transition">
         <Component {...pageProps} />
       </PageTransition>
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
           transition: opacity 300ms;
         }
     `}</style>
-    </>
+    </Container>
   )
 }
 
