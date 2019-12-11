@@ -8,11 +8,11 @@ import Footer from './Footer';
 const Layout = props => {
   useEffect(() => {
     if (!window.GA_INITIALIZED) {
-      // initAnalytics()
-      // window.GA_INITIALIZED = true
+      initAnalytics()
+      window.GA_INITIALIZED = true
     }
 
-    // logPageView()
+    logPageView()
   }, [])
   return (
     <>    

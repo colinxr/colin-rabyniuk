@@ -82,11 +82,11 @@ function Header(props) {
 				animation-fill-mode: forwards;
 			 }
 
-			.ease:nth-child(1) { animation-delay: 100ms; }
-			.ease:nth-child(2) { animation-delay: 200ms; }
-			.ease:nth-child(3) { animation-delay: 300ms; }
-			.ease:nth-child(4) { animation-delay: 400ms; }
-			.ease:nth-child(5) { animation-delay: 500ms; }
+			.ease:nth-child(1) { animation-delay: 125ms; }
+			.ease:nth-child(2) { animation-delay: 250ms; }
+			.ease:nth-child(3) { animation-delay: 375ms; }
+			.ease:nth-child(4) { animation-delay: 500ms; }
+			.ease:nth-child(5) { animation-delay: 525ms; }
 
 			@keyframes slideUp {
 			0%,100% {
@@ -94,7 +94,7 @@ function Header(props) {
 				/* easeOutCirc */ }
 			0% {
 				opacity: 0;
-				transform: translateY(75px); }
+				transform: translateY(35px); }
 			100% {
 				opacity: 1;
 				transform: translateY(0); } }
