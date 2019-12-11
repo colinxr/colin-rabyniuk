@@ -3,15 +3,15 @@ import Prismic from 'prismic-javascript'
 export const getPosts = async (type, page) => {
   return await Prismic.getApi('https://colin-rabyniuk.cdn.prismic.io/api/v2')
     .then(api => api.query(
-      Prismic.Predicates.at('document.type', 'post'),
-      {pageSize: 10, page: 1}
+      Prismic.Predicates.at('document.type', type),
+      {pageSize: 10, page: page}
     ))
     .then(data => data.results)
 }
 
-export const getPostBySlug = async (uid) => {
+export const getPostBySlug = async (type, uid) => {
   return await Prismic.getApi('https://colin-rabyniuk.cdn.prismic.io/api/v2')
-    .then(api => api.getByUID('post', uid))
+    .then(api => api.getByUID(type, uid))
     .then(data => data)
 }
 
