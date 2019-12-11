@@ -9,7 +9,7 @@ const Blog = (props) => {
 
   useEffect(() => {
     (async function fetchPosts(page) {
-      const resp = await getPosts('post', page)
+      const resp = await getPosts(props.type, page)
       setPosts(resp)
     })()
   }, [])
@@ -18,10 +18,7 @@ const Blog = (props) => {
     <main role="main">
       <div className="wrapper">
         <h3>Journal</h3>
-        {
-          !posts &&
-            <Loading />
-        }
+        { !posts && <Loading /> }
         { posts && 
             posts.map((post, i) => <Post key={i} post={post}></Post> ) }
         {
