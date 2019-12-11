@@ -32,7 +32,7 @@ const Layout = (props) => {
         {/* { favicon } */}
       </Head>  
       
-      {/* <Header isInsidePage={ props.isInsidePage } /> */}
+      <Header isInsidePage={ props.isInsidePage } />
   
       <main role="main"> { props.content } </main>
       
