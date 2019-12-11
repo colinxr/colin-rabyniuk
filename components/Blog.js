@@ -15,7 +15,7 @@ const Blog = (props) => {
   }, [])
 
   return (
-    <main role="main">
+    <>
       <div className="wrapper">
         <h3>Journal</h3>
         { !posts && <Loading /> }
@@ -34,7 +34,7 @@ const Blog = (props) => {
       <style jsx>{`
         h3 { color: #4a4a4a; }
       `}</style>
-    </main>
+    </>
   )
 }
 
