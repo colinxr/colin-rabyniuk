@@ -133,6 +133,7 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-prismjs": "^1.1.1"
+    "babel-plugin-prismjs": "^1.1.1",
+    "enzyme": "^3.10.0"
   }
 }
