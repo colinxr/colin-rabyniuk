@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Prismic from 'prismic-javascript';
 import Layout from '../components/Layout';
+import Loading from '../components/Loading';
 import PostBody from '../components/PostBody/PostBody';
 
 function PostPage(props) {
   const { params } = props.match
-  const [post, setPost] = useState();
+  const [post, setPost] = useState(null);
   // const [isLoading, setIsLoading] = useState(true);
   const apiEndpoint = process.env.REACT_APP_API
 
@@ -28,7 +29,11 @@ function PostPage(props) {
             <div className="block">
               <div className="wrapper">
                 {
-                  post !== undefined &&
+                  !post &&
+                    <Loading />
+                }
+                {
+                  post &&
                    <PostBody data={post.data} />
                 }
               </div>
