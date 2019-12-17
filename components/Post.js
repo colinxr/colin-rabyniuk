@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link'
 
-function Post(props) {
+const Post = (props) => {
   const { uid } = props.post;
   const { title, published, excerpt } = props.post.data
 
@@ -20,6 +20,8 @@ function Post(props) {
         { text && <p>{ text }</p> }
 
     <style jsx>{`
+      .cr-post-item { border-radius: 10px; }
+
       .cr-post-item + .cr-post-item { margin-top: 2.25rem; }
 
       .cr-post-item__meta { 
@@ -40,6 +42,7 @@ function Post(props) {
       }
 
       a:hover { color: #666 }
+
       a:visited { color: #333 }
     `}</style>
     </article>

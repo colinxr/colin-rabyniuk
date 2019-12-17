@@ -2,13 +2,12 @@ import React, { useEffect } from 'react'
 import Prism from 'prismjs'
 
 const Codeblock = (props) => {
-
-  useEffect(() => {setTimeout(() => Prism.highlightAll())}, [])
+  useEffect(() => { setTimeout(() => Prism.highlightAll(), 0) }, [])
 
   return (
     <pre>
-      <code className={props.class}>
-        {props.content}
+      <code className={ props.class }>
+        { props.content }
       </code>
       <style jsx>{`
         pre,
@@ -23,10 +22,8 @@ const Codeblock = (props) => {
           margin: 1.5rem 0;
         }
       `}</style>
-
     </pre>
   )
-
 }
 
 export default Codeblock

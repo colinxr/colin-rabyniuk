@@ -13,7 +13,7 @@ function PostPage({ post }) {
         content={
           <>
             <Head>
-              <title>{ post !== undefined ? `Colin Rabyniuk | ${post.data.title[0].text}` : 'Colin Rabyniuk | Post Loading' }</title>
+              <title>{post !== undefined ? `Colin Rabyniuk | ${post.data.title[0].text}` : 'Colin Rabyniuk | Post Loading'}</title>
             </Head>
             <div className="wrapper">
               {
@@ -29,7 +29,7 @@ function PostPage({ post }) {
 }
 
 PostPage.getInitialProps = async ({ query }) => {
-  const post = await getPostBySlug('post', query.id)
+  const post = await getPostBySlug('journal', query.id)
 
   return { post }
 }

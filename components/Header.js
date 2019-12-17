@@ -2,33 +2,9 @@ import React from 'react';
 import Link from 'next/link'
 import Menu from './Menu'
 
-function Header(props) {
+const Header = (props) => {
 	const classes = props.isInsidePage ? 'header block block--header header--inside' : 'header block block--header';
-
-	const renderSmall = () => {
-		return (
-			<>
-				<h6>
-				<Link href="/"><a>Back</a></Link>
-				</h6>
-				<h2>I&rsquo;m Colin. Let&rsquo;s build</h2>
-				<Menu />
-			</>
-		)
-	}
-
-	const renderLarge = () => {
-		return  (
-			<>
-				<h6 className="ease">Hey!</h6>
-				<h1 className="ease">My name is Colin Rabyniuk,</h1>
-				<h1 className="ease">I&rsquo;m a full-stack dev who loves all things digital.</h1>
-				<h1 className="ease">Let&rsquo;s build</h1>
-				<Menu />
-			</>
-		)
-	}
-
+	
 	return (
 		<div className={ classes } role="banner">
 			<div className="wrapper">
@@ -73,6 +49,8 @@ function Header(props) {
 				line-height: 1.5555556rem;
 				margin-bottom: 1.5555556rem;
 			}
+			
+			h6 a { text-decoration: none; }
 
 			.ease {
 				opacity: 0;
@@ -82,11 +60,11 @@ function Header(props) {
 				animation-fill-mode: forwards;
 			 }
 
-			.ease:nth-child(1) { animation-delay: 100ms; }
-			.ease:nth-child(2) { animation-delay: 200ms; }
-			.ease:nth-child(3) { animation-delay: 300ms; }
-			.ease:nth-child(4) { animation-delay: 400ms; }
-			.ease:nth-child(5) { animation-delay: 500ms; }
+			.ease:nth-child(1) { animation-delay: 125ms; }
+			.ease:nth-child(2) { animation-delay: 250ms; }
+			.ease:nth-child(3) { animation-delay: 375ms; }
+			.ease:nth-child(4) { animation-delay: 500ms; }
+			.ease:nth-child(5) { animation-delay: 525ms; }
 
 			@keyframes slideUp {
 			0%,100% {
@@ -94,7 +72,7 @@ function Header(props) {
 				/* easeOutCirc */ }
 			0% {
 				opacity: 0;
-				transform: translateY(75px); }
+				transform: translateY(35px); }
 			100% {
 				opacity: 1;
 				transform: translateY(0); } }

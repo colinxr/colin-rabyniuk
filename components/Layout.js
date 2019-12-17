@@ -5,29 +5,37 @@ import Header from './Header';
 import Newsletter from './Newsletter';
 import Footer from './Footer';
 
-const Layout = props => {
+const Layout = (props) => {
   useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initAnalytics()
-      window.GA_INITIALIZED = true
-    }
+    // if (!window.GA_INITIALIZED) {
+    //   initAnalytics()
+    //   window.GA_INITIALIZED = true
+    // }
 
-    logPageView()
+    // logPageView()
   }, [])
   return (
     <>    
       <Head>
         <title>Colin Rabyniuk</title>
-        <meta charSet="utf-8"/>
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta description="Colin Rabyniuk full stack developer – Javascript, PHP, Python, Wordpress"/>
+        <meta key="carset" charSet="utf-8"/>
+        <meta key="http-equiv" httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta key="viewport" name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta key="author" name="author" content="Colin Rabyniuk" />
+        <meta key="description" description="Colin Rabyniuk full stack developer – Javascript, PHP, Python, Wordpress" />
+        <meta key="og:title" name="og:title" content="Colin Rabyniuk" />
+        <meta key="og:description" name="og:description" content="Colin Rabyniuk | Full Stack Deve | Javascript, Express, WP, Laravel, Python" />
+        <meta key="og:image" name="og:image" content="" />
+        <meta key="og:url" content="https://colinrabyniuk.com" />
+        <meta key="og:site_name" name="og:site_name" content="Colin Rabyniuk" />
+        <meta key="og:type" name="og:type" content="website" />
+        {/* { favicon } */}
       </Head>  
+      
       <Header isInsidePage={ props.isInsidePage } />
-      <main>
-        { props.content }
-      </main>
-
+  
+      <main role="main"> { props.content } </main>
+      
       <Footer />
 
       <style jsx global>{`

@@ -38,16 +38,15 @@ const PostBody = (props) => {
     }
   };
 
-
   return ( 
     <div className="cr-post">
       {
         props && (
           <>
-            { <RichText render={title} htmlSerializer={htmlSerializer} /> }
+            <h1>{title[0].text}</h1>
             <span className="cr-post__meta">{ published }</span>
             <div className="cr-post__body">
-              { <RichText render={body} htmlSerializer={htmlSerializer} /> }
+              { <RichText key="body" render={body} htmlSerializer={htmlSerializer} /> }
             </div>
           </>
         )
@@ -59,6 +58,11 @@ const PostBody = (props) => {
         font-family: var(--metaFamily); 
         font-size: .75rem;
         margin: 0;
+      }
+
+      h1 {
+        line-height: 1.2;
+        margin-bottom: 0;
       }
     `}</style>
     </div>

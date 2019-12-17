@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-function RecipeLink(props) {
+const RecipeLink = () => {
   // const { uid } = props.post;
   // const { title, published, body, excerpt } = props.post.data
 

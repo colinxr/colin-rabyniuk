@@ -11,7 +11,10 @@ const Footer = () => {
       </div>
 
   <style jsx>{`
-    .footer { border-top: 1px solid #edefee; }
+    .footer { 
+      border-top: 1px solid #edefee; 
+      font-size: .75rem;
+    }
 
     .footer__content {
       display: flex;

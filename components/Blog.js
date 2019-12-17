@@ -6,38 +6,64 @@ import Loading from './Loading'
 const Blog = (props) => {
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState(null)
+  const [showPagination, setShowPagination] = useState(true)
 
-  useEffect(() => {
-    (async function fetchPosts(page) {
-      const resp = await getPosts('post', page)
-      setPosts(resp)
-    })()
-  }, [])
+  useEffect(() => { fetchPosts(page) }, [page])
+
+  const fetchPosts = async (page) => {
+    const resp = await getPosts('post', page)
+    const results = resp.results
+    const newPosts = !posts ? results : [...posts, ...results]
+    
+    setPosts(newPosts)
+    if (newPosts.length >= resp.total_results_size) {
+      setShowPagination(false)
+    }
+  }
 
   return (
-    <main role="main">
+    <>
       <div className="wrapper">
         <h3>Journal</h3>
-        {
-          !posts &&
-            <Loading />
+        { !posts && <Loading /> }
+        { 
+          posts && 
+            posts.map((post, i) => <Post key={i} post={post}></Post> ) 
         }
-        { posts && 
-            posts.map((post, i) => <Post key={i} post={post}></Post> ) }
         {
-          page > 1 &&
-            <button onCLick={() => { setPage(page - 1)}}>
-              Previous Page
+          posts && showPagination && (
+            <button onClick={() => { setPage(page + 1) }}>
+              Load More
             </button>
+          )
         }
-        {/* <button onClick={() => { setPage(page + 1) }}>
-          Next Page
-        </button> */}
       </div>
       <style jsx>{`
         h3 { color: #4a4a4a; }
+
+        button {
+          background-color: #ddd;
+          border: none;
+          font-family: 'Apercu';
+          color: #555;
+          font-size: 1rem;
+          font-style: italic;
+          cursor: pointer;
+          padding: 0;
+          transition: .15s;
+        }
+
+        button:hover {
+          background-color: #bbb;
+        }
+
+        button:focus{
+          outline: 0;
+          color: #4a4a4a;
+          background-color: #a2a2a2;
+        }
       `}</style>
-    </main>
+    </>
   )
 }
 
