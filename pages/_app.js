@@ -4,7 +4,7 @@ import { PageTransition } from 'next-page-transitions'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Container>
+    <>
       <PageTransition timeout={300} classNames="page-transition">
         <Component {...pageProps} />
       </PageTransition>
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
           transition: opacity 300ms;
         }
     `}</style>
-    </Container>
+    </>
   )
 }
 

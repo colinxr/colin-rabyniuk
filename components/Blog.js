@@ -24,8 +24,10 @@ const Blog = (props) => {
   return (
     <>
       <div className="wrapper">
-        <h3>Journal</h3>
-        { !posts && <Loading /> }
+        { !posts && <h4>You are what you think you are what you think you are what you think</h4> }
+        {
+          posts && <h3>Journal</h3>
+        }
         { 
           posts && 
             posts.map((post, i) => <Post key={i} post={post}></Post> ) 
@@ -39,10 +41,15 @@ const Blog = (props) => {
         }
       </div>
       <style jsx>{`
-        h3 { color: #4a4a4a; }
+        h3 { color: #666; }
+
+        h4 { 
+          font-weight: normal;
+          color: #c1cdcd; 
+        }
 
         button {
-          background-color: #ddd;
+          background-color: #c1cdcd;;
           border: none;
           font-family: 'Apercu';
           color: #555;
