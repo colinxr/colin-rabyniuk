@@ -1,7 +1,7 @@
 const express = require('express')
 const next    = require('next')
 const port    = parseInt(process.env.PORT, 10) || 3000
-const dev     = process.nextTick.NODE_ENV !== 'production'
+const dev     = process.env.NODE_ENV !== 'production'
 const nextApp = next({dev})
 const handle  = nextApp.getRequestHandler()
 const bodyParser = require('body-parser')
@@ -13,10 +13,6 @@ nextApp.prepare().then(() => {
 
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json())
-
-  // app.get('/post/:id', (req, res) => {
-  //   return nextApp.render(req, res, '/post', { id: req.params.id })
-  // })
 
   app.get('/journal/:id', (req, res) => {
     return nextApp.render(req, res, '/post', { id: req.params.id })
