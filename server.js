@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const next    = require('next')
 const port    = parseInt(process.env.PORT, 10) || 3000
@@ -8,7 +10,7 @@ const nextApp = next({dev})
 const handle  = nextApp.getRequestHandler()
 const bodyParser = require('body-parser')
 
-require('dotenv').config()
+
 
 nextApp.prepare().then(() => {
   const app = express()
