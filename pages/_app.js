@@ -1,4 +1,6 @@
 import App, { Container } from 'next/app'
+import Router from 'next/router'
+import withGA from 'next-ga'
 import React from 'react'
 import { PageTransition } from 'next-page-transitions'
 
@@ -24,4 +26,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default withGA('UA-31138805-3', Router)(MyApp);
