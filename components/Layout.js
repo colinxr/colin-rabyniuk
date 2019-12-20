@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { initAnalytics, logPageView } from '../utils/analytics';
 import Head from 'next/head'
 import Header from './Header';
-import Newsletter from './Newsletter';
+// import Newsletter from './Newsletter';
 import Footer from './Footer';
 
 const Layout = (props) => {
@@ -18,7 +18,7 @@ const Layout = (props) => {
     <>    
       <Head>
         <title>Colin Rabyniuk</title>
-        <meta key="carset" charSet="utf-8"/>
+        <meta key="charset" charSet="utf-8"/>
         <meta key="http-equiv" httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta key="viewport" name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta key="author" name="author" content="Colin Rabyniuk" />
