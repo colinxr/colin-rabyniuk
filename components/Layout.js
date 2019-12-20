@@ -1,19 +1,10 @@
-import React, { useEffect } from 'react';
-import { initAnalytics, logPageView } from '../utils/analytics';
+import React from 'react';
 import Head from 'next/head'
 import Header from './Header';
 // import Newsletter from './Newsletter';
 import Footer from './Footer';
 
 const Layout = (props) => {
-  useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initAnalytics()
-      window.GA_INITIALIZED = true
-    }
-
-    logPageView()
-  }, [])
   return (
     <>    
       <Head>
