@@ -116,8 +116,9 @@ const Layout = (props) => {
         }
 
         .text {
-          background-color: #eaeaea;
-          font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+          background-color: #e8e8e8;;
+          font-size:.8rem;
+          font-family: Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
         }
       `}</style>
     </>

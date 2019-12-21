@@ -52,7 +52,9 @@ const PostBody = (props) => {
         )
       }
     <style jsx>{`
-      .cr-post { min-height: 500px }
+      .cr-post { 
+        transition: .15s;
+      }
 
       .cr-post__meta {
         font-family: var(--metaFamily); 
