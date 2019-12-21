@@ -1,10 +1,12 @@
 import App, { Container } from 'next/app'
+import Router from 'next/router'
+import withGA from 'next-ga'
 import React from 'react'
 import { PageTransition } from 'next-page-transitions'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Container>
+    <>
       <PageTransition timeout={300} classNames="page-transition">
         <Component {...pageProps} />
       </PageTransition>
@@ -20,8 +22,8 @@ function MyApp({ Component, pageProps }) {
           transition: opacity 300ms;
         }
     `}</style>
-    </Container>
+    </>
   )
 }
 
-export default MyApp
+export default withGA('UA-31138805-3', Router)(MyApp);
