@@ -120,6 +120,39 @@ const Layout = (props) => {
           font-size:.8rem;
           font-family: Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
         }
+
+        .cr-btn {
+          background-color: var(--link);
+          transition: all linear .2s;
+          color: var(--body);
+        }
+
+        .cr-btn:hover {
+          background-color: var(--linkHover);
+          text-decoration: none;
+        }
+
+        .cr-btn--secondary {
+          background-color: #c1cdcd;;
+          border: none;
+          font-family: 'Apercu';
+          color: #555;
+          font-size: 1rem;
+          font-style: italic;
+          cursor: pointer;
+          padding: 0;
+          transition: .15s;
+        }
+
+        .cr-btn--secondary:hover {
+          background-color: #bbb;
+        }
+
+        .cr-btn--secondary:focus{
+          outline: 0;
+          color: #4a4a4a;
+          background-color: #a2a2a2;
+        }
       `}</style>
     </>
   )

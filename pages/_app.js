@@ -2,14 +2,16 @@ import App, { Container } from 'next/app'
 import Router from 'next/router'
 import withGA from 'next-ga'
 import React from 'react'
+import { StoreProvider } from 'easy-peasy'
+import store from '../store'
 // import { PageTransition } from 'next-page-transitions'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      {/* <PageTransition timeout={300} classNames="page-transition"> */}
+      <StoreProvider store={store}>
         <Component {...pageProps} />
-      {/* </PageTransition> */}
+      </StoreProvider>
       <style jsx global>{`
         .page-transition-enter .cr-post { opacity: 0; transform: translateY(100px) }
         .page-transition-enter-active .cr-post {

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { getPostBySlug } from '../../api/posts'
 import Layout from '../../components/Layout';
 import PostBody from '../../components/PostBody';
+import store from '../../store';
 
 function PostPage({ post }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,8 @@ function PostPage({ post }) {
 }
 
 PostPage.getInitialProps = async ({ query }) => {
+  const storePost = await store.getState().post
+  console.log(post)
   const post = await getPostBySlug('post', query.id)
 
   return { post }

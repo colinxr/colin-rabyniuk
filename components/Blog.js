@@ -24,7 +24,7 @@ const Blog = (props) => {
   return (
     <>
       <div className="wrapper">
-        { !posts && <h4>You are what you think you are what you think you are what you think</h4> }
+        { !posts && <Loading /> }
         {
           posts && <h3>Journal</h3>
         }
@@ -34,7 +34,7 @@ const Blog = (props) => {
         }
         {
           posts && showPagination && (
-            <button onClick={() => { setPage(page + 1) }}>
+            <button className="cr-btn cr-btn--secondary" onClick={() => { setPage(page + 1) }}>
               Load More
             </button>
           )
@@ -46,28 +46,6 @@ const Blog = (props) => {
         h4 { 
           font-weight: normal;
           color: #c1cdcd; 
-        }
-
-        button {
-          background-color: #c1cdcd;;
-          border: none;
-          font-family: 'Apercu';
-          color: #555;
-          font-size: 1rem;
-          font-style: italic;
-          cursor: pointer;
-          padding: 0;
-          transition: .15s;
-        }
-
-        button:hover {
-          background-color: #bbb;
-        }
-
-        button:focus{
-          outline: 0;
-          color: #4a4a4a;
-          background-color: #a2a2a2;
         }
       `}</style>
     </>

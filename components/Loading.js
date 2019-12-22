@@ -1,18 +1,16 @@
 import React from 'react';
 
 const Loading = () => (
-  <div className="loading-card">
+  <>
+    <h4>You are what you think you are what you think you are what you think</h4>
     
     <style jsx>{`
-      .loading-card {
-        overflow: hidden;
-        background: white;
-        border-radius: 4px;
-        padding-top: 200px;
-        background-color: #e8e8e8;
+      h4 {
+        font - weight: normal;
+        color: #c1cdcd; 
       }
     `}</style>
-  </div>
+  </>
 )
 
 export default Loading

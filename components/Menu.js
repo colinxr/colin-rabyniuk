@@ -5,16 +5,13 @@ const Menu = (props) => {
   return (
     <ul className={ classes } role="navigation">
       <li className="nav__item">
-        <a href="http://mailto:colinxr@gmail.com">Email</a>
+        <a className="cr-btn" href="http://mailto:colinxr@gmail.com">Email</a>
       </li>
       <li className="nav__item">
-        <a href="http://github.com/colinxr" target="_blank">GitHub</a>
+        <a className="cr-btn" href="http://github.com/colinxr" target="_blank">GitHub</a>
       </li>
-      {/* <li className="nav__item">
-        <a href="medium.com/colinxr" target="_blank">Medium</a>
-      </li> */}
       <li className="nav__item">
-        <a href="http://linkedIn.com/colinxr" target="_blank">LinkedIn</a>
+        <a className="cr-btn" href="http://linkedIn.com/colinxr" target="_blank">LinkedIn</a>
       </li>
       {
         !props.isSecondary && 
@@ -31,25 +28,14 @@ const Menu = (props) => {
       }
 
       .nav__item + .nav__item { margin-left: 28px; }
-      
-      a {
-        background-color: var(--link);
-        transition: all linear .2s;
-        color: var(--body);
-      }
-
-      a:hover {
-        background-color: var(--linkHover);
-        text-decoration: none;
-      }
 
       .nav--secondary { 
         margin: 0; 
         font-size: .75rem;
       }
 
-    .nav--secondary a { background-color: transparent; }
-    .nav--secondary a:hover { background-color: transparent; }
+      .nav--secondary .cr-btn { background-color: transparent; }
+      .nav--secondary .cr-btn:hover { background-color: transparent; }
     `}</style>
     </ul>
   )
