@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <div className="footer-item">
         <div className="wrap inline">
-          <p>I'm a self-taught dev based out of Toronto with a background in journalism and digital media. I work a lot with Javascript and PHP. My work has me focused on front-end projects, but I'm quite comfortable working on the back-end when needed.</p>
+          <p>I'm a self-taught dev based out of Toronto. I work a lot with Javascript and PHP. My work has me focused on front-end projects, but I'm quite comfortable working on the back-end when needed. Taking on freelance projects for 2020.</p>
 
           <a href="mailto:colinxr@gmail.com" target="_blank" className="cr-btn">Get in Touch</a>
         </div>
