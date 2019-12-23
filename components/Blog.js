@@ -11,7 +11,7 @@ const Blog = (props) => {
   useEffect(() => { fetchPosts(page) }, [page])
 
   const fetchPosts = async (page) => {
-    const resp = await getPosts('post', page)
+    const resp = await getPosts(props.contentType, page)
     const results = resp.results
     const newPosts = !posts ? results : [...posts, ...results]
     
@@ -30,7 +30,7 @@ const Blog = (props) => {
         }
         { 
           posts && 
-            posts.map((post, i) => <Post key={i} post={post}></Post> ) 
+            posts.map((post, i) => <Post key={i} post={post} contentType={props.contentType}></Post> ) 
         }
         {
           posts && showPagination && (

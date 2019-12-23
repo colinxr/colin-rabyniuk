@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
 import { getPostBySlug } from '../../api/posts'
-import Layout from '../../components/Layout';
+import JournalLayout from '../../components/JournalLayout';
 import PostBody from '../../components/PostBody';
 
 function PostPage({ post }) {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <>
-      <Layout
-        isInsidePage={true}
+      <JournalLayout
         content={
           <>
             <Head>

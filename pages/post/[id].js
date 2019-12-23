@@ -31,7 +31,6 @@ function PostPage({ post }) {
 
 PostPage.getInitialProps = async ({ query }) => {
   const storePost = await store.getState().post
-  console.log(post)
   const post = await getPostBySlug('post', query.id)
 
   return { post }

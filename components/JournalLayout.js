@@ -4,7 +4,7 @@ import Header from './Header';
 // import Newsletter from './Newsletter';
 import Footer from './Footer';
 
-const Layout = (props) => {
+const JournalLayout = (props) => {
   return (
     <>    
       <Head>
@@ -16,6 +16,8 @@ const Layout = (props) => {
         <meta key="description" description="Colin Rabyniuk full stack developer – Javascript, PHP, Python, Wordpress" />
         <meta key="og:title" name="og:title" content="Colin Rabyniuk" />
         <meta key="og:description" name="og:description" content="Colin Rabyniuk | Full Stack Deve | Javascript, Express, WP, Laravel, Python" />
+        <meta key="robots" name="robots" content="noindex" />
+        <meta keyu="googlebot" name="googlebot" content="noindex" />
         <meta key="og:image" name="og:image" content="" />
         <meta key="og:url" content="https://colinrabyniuk.com" />
         <meta key="og:site_name" name="og:site_name" content="Colin Rabyniuk" />
@@ -23,11 +25,15 @@ const Layout = (props) => {
         {/* { favicon } */}
       </Head>  
       
-      <Header isInsidePage={ props.isInsidePage } />
+      <div className="header block block--header header--inside" role="banner">
+        <div className="wrapper">
+          <h2>You are what you think</h2>
+        </div>
+      </div>
   
       <main role="main"> { props.content } </main>
       
-      <Footer isMainFooter={true} />
+      <Footer isMainFooter={ false } />
 
       <style jsx global>{`
         :root {
@@ -158,4 +164,4 @@ const Layout = (props) => {
   )
 }
 
-export default Layout
+export default JournalLayout

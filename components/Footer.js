@@ -1,17 +1,21 @@
 import React from 'react'
 import Menu from './Menu'
 
-const Footer = () => {
+const Footer = (props) => {
   const date = new Date()
   return (
     <>
-      <div className="footer-item">
-        <div className="wrap inline">
-          <p>I'm a self-taught dev based out of Toronto with a background in journalism and digital media. I work a lot with Javascript and PHP. My work has me focused on front-end projects, but I'm quite comfortable working on the back-end when needed.</p>
+    {
+      props.isMainFooter && (
+        <div className="footer-item">
+          <div className="wrap inline">
+            <p>I'm a self-taught dev based out of Toronto with a background in journalism and digital media. I work a lot with Javascript and PHP. My work has me focused on front-end projects, but I'm quite comfortable working on the back-end when needed.</p>
 
-          <a href="mailto:colinxr@gmail.com" target="_blank" className="cr-btn">Get in Touch</a>
+            <a href="mailto:colinxr@gmail.com" target="_blank" className="cr-btn">Get in Touch</a>
+          </div>
         </div>
-      </div>
+      )
+    }
       <div className="footer-item">
         <div className="wrap">
           <span>Colin Rabyniuk, { date.getFullYear() }</span>

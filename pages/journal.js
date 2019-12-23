@@ -1,11 +1,11 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import JournalLayout from '../components/JournalLayout'
 import Blog from '../components/Blog';
 
 const Journal = () => (
-  <Layout
+  <JournalLayout
     content={
-      <Blog type='journal' />
+      <Blog contentType='journal' />
     }
   />
 )

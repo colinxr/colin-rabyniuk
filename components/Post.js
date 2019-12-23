@@ -9,8 +9,7 @@ const Post = (props) => {
   const { title, published, excerpt } = props.post.data
 
   // format published into [Mon, Day, Year]
-  // add excerpt
-  const text = excerpt[0] ? excerpt[0]['text'] : null
+  const text = excerpt ? excerpt[0]['text'] : null
 
   const setPost = useStoreActions(
     actions => actions.currPost.setPost(props.post)
@@ -28,7 +27,7 @@ const Post = (props) => {
       // onClick={() => setCurrentPost()}
       >
         <h2>
-          <Link href={`/post/${uid}`} as={`/post/${uid}`}>
+          <Link href={`/${props.contentType}/${uid}`} as={`/${props.contentType}/${uid}`}>
             <a>{title[0].text}</a>
           </Link>
         </h2>
