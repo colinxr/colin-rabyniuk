@@ -15,14 +15,5 @@ const Index = ({ posts }) => {
     />
   )
 }
-  
-Index.getInitialProps = async () => {
-  // const resp = await getPosts('post', 1)
-  // const posts = resp.results
-  
-  // store.dispatch.posts.setPosts(posts)
-  // console.log(store.getState().posts)
-  return { }
-}
 
 export default Index

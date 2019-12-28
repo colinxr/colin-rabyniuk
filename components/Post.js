@@ -8,8 +8,6 @@ const Post = (props) => {
   const { uid } = props.post;
   const { title, published, excerpt } = props.post.data
 
-  // format published into [Mon, Day, Year]
-  // add excerpt
   const text = excerpt[0] ? excerpt[0]['text'] : null
 
   const setPost = useStoreActions(
@@ -19,7 +17,6 @@ const Post = (props) => {
   const setCurrentPost = () => {
     const currPost = props.post
     setPost(currPost)
-    // Router.push(`/post/${currPost.uid}`)
   }
 
   return (
